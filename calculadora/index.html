@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora JavaScript</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <div class="calculadora">
+    </div>
+    <div class="container">
+
+        <h1>Calculadora em JavaScript</h1>
+        <form name="calc" class="calculadora">
+            <div>
+                <input type="text" id="visor" maxlength="900" readonly />
+            </div>
+            <hr />
+            <div class="linha-1">
+                <input type="button" class="botao" value="7" onclick="preencher(7);" />
+                <input type="button" class="botao" value="8" onclick="preencher(8);" />
+                <input type="button" class="botao" value="9" onclick="preencher(9);" />
+                <input type="button" class="botao" id="operacao" value="+" onclick="preencher('+');" />
+                <input type="button" class="botao" id="operacao" value="%" onclick="percent();" />
+            </div>
+            <div class="linha-2">
+                <input type="button" class="botao" value="4" onclick="preencher(4);" />
+                <input type="button" class="botao" value="5" onclick="preencher(5);" />
+                <input type="button" class="botao" value="6" onclick="preencher(6);" />
+                <input type="button" class="botao" id="operacao" value="-" onclick="preencher('-');" />
+                <input type="button" class="botao" id="operacao" value="n&ordf" onclick="preencher('**');">
+            </div>
+            <div class="linha-3">
+                <input type="button" class="botao" value="1" onclick="preencher(1);" />
+                <input type="button" class="botao" value="2" onclick="preencher(2);" />
+                <input type="button" class="botao" value="3" onclick="preencher(3);" />
+                <input type="button" class="botao" id="operacao" value="*" onclick="preencher('*');" />
+                <input type="button" class="botao" id="operacao" value="√" onclick="raiz();" />
+            </div>
+            <div class="linha-4">
+                <input type="button" class="botao" value="0" onclick="preencher(0);" />
+                <input type="button" class="botao" value="=" onclick="calculo(value);" />
+                <input type="button" class="botao" value="C" onclick="limpar();" />
+                <input type="button" class="botao" id="operacao" value="/" onclick="preencher('/');" />
+                <input type="button" class="botao" id="operacao" value="." onclick="preencher('.');" />
+            </div>
+        </form>
+    </div>
+    <footer>
+        <nav>
+            <ul class="redes-sociais">
+                <li>
+                    <a href="https://www.linkedin.com/in/carloseduardocosmedasilva/" target="_blank">
+                        <img src="./assets/img/linkedin.svg" alt="Linkedin">
+                        <p>Linkedin</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/carlosecosmesilva" target="_blank">
+                        <img src="./assets/img/github-logo.svg" alt="Github">
+                        <p>Github</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/caduusilva/" target="_blank">
+                        <img src="./assets/img/instagram.svg" alt="Instagram">
+                        <p>Instagram</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/carlosecosmedasilva/" target="_blank">
+                        <img src="./assets/img/facebook-app-symbol.svg" alt="Facebook">
+                        <p>Facebook</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

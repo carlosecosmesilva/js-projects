@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ============= Variables ============= */
+
+:root {
+    --first-color: #3939ac;
+    --second-color: #3e0d8d;
+    --third-color: #bbb;
+    --four-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--first-color);
+    color: var(--four-color);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.user_form {
+    max-width: 700px;
+    width: 100%;
+}
+
+.user_form input {
+    width: 100%;
+    display: block;
+    background-color: var(--second-color);
+    border: none;
+    border-radius: 10px;
+    color: var(--four-color);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    box-shadow: 0 5px 10px rgba(154, 156, 185, 0.05), 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.user_form input::placeholder {
+    color: var(--third-color);
+}
+
+.user_form input:focus {
+    outline: none;
+}
+
+.card {
+    max-width: 800px;
+    background-color: var(--second-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 156, 185, 0.05), 0 15px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 3rem;
+    margin: 0 1.5rem;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 10px solid var(--first-color);
+    height: 150px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.user_form {
+    color: #eee;
+    margin-left: 2rem;
+}
+
+.user_info h2 {
+    margin-top: 0;
+}
+
+.user_info ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 400px;
+}
+
+.user_info ul li {
+    display: flex;
+    align-items: center;
+}
+
+.user_info ul li strong {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.repo {
+    text-decoration: none;
+    color: var(--four-color);
+    background-color: var(--first-color);
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.btn {
+    outline-style: none;
+}
+
+@media (max-width:500px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .user_form {
+        max-width: 400px;
+    }
+    .user_form input {
+        width: 90%;
+    }
+}
