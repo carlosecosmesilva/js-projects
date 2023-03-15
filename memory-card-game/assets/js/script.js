@@ -68,7 +68,7 @@ function matchCards(img1, img2) {
 
 function shuffleCard() {
 	timeLeft = maxTime;
-	flips = matchedCardCard = 0;
+	flips = matchedCard = 0;
 	cardOne = cardTwo = "";
 	clearInterval(timer);
 	timeTag.innerText = timeLeft;
