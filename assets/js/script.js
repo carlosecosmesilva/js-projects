@@ -4,6 +4,7 @@ const projects = [
 	"consulta-clima",
 	"github-usersearch",
 	"take-notes",
+	"memory-card-game",
 ];
 
 const list = document.getElementById("list");
