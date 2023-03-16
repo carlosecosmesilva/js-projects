@@ -1,45 +1,92 @@
-function preencher(valor) {
+const currDisplay = document.querySelector(".curr-display");
+const prevDisplay = document.querySelector(".prev-display");
+const numbers = document.querySelectorAll(".number");
+const operands = document.querySelectorAll(".operation");
+const clearBtn = document.querySelector(".clear");
+const delBtn = document.querySelector(".delete");
+const equalBtn = document.querySelector(".equal");
 
-    document.getElementById('visor').value += valor;
+let operation;
 
+function appendNumber(number) {
+	if (number === "." && currDisplay.innerText.includes(".")) {
+		return;
+	}
+	currDisplay.innerText += number;
 }
 
-function limpar() {
-
-    document.getElementById('visor').value = '';
-
+function chooseOperation(operand) {
+	if (currDisplay.innerText === "") {
+		return;
+	}
+	compute(operand);
+	operation = operand;
+	currDisplay.innerText += operand;
+	prevDisplay.innerText = currDisplay.innerText;
+	currDisplay.innerText = "";
 }
 
-function calculo(valor) {
-
-    try {
-        var resultado = 0;
-        resultado = document.getElementById('visor').value;
-        document.getElementById('visor').value = '';
-        document.getElementById('visor').value = eval(resultado);
-    } catch (err) {
-
-        alert("Expressão inválida");
-    }
-
+function clearDisplay() {
+	currDisplay.innerText = "";
+	prevDisplay.innerText = "";
 }
 
-function raiz() {
+function compute(operand) {
+	let result;
+	const previousValue = parseFloat(prevDisplay.innerText);
+	const currentValue = parseFloat(currDisplay.innerText);
 
-    var root = 0;
-    root = document.getElementById('visor').value;
-    document.getElementById('visor').value = '';
-    document.getElementById('visor').value = Math.sqrt(root);
-
+	if (isNaN(previousValue) || isNaN(currentValue)) {
+		return;
+	} else {
+		switch (operation) {
+			case "+":
+				result = previousValue + currentValue;
+				break;
+			case "-":
+				result = previousValue - currentValue;
+				break;
+			case "*":
+				result = previousValue * currentValue;
+				break;
+			case "/":
+				result = previousValue / currentValue;
+				break;
+			case "√":
+				result = Math.sqrt(previousValue);
+				break;
+			case "%":
+				result = previousValue / 100;
+				break;
+			default:
+				break;
+		}
+		currDisplay.innerText = result;
+	}
 }
 
-//Função que calcula porcentagem
-function percent() {
+numbers.forEach((number) => {
+	number.addEventListener("click", () => {
+		appendNumber(number.innerText);
+	});
+});
 
-    var perct = 0;
-    perct = document.getElementById('visor').value;
-    document.getElementById('visor').value = '';
-    perct = eval(perct);
-    document.getElementById('visor').value = perct / 100;
+operands.forEach((operand) => {
+	operand.addEventListener("click", () => {
+		chooseOperation(operand.innerText);
+	});
+});
 
-}
+clearBtn.addEventListener("click", () => {
+	clearDisplay();
+});
+
+equalBtn.addEventListener("click", () => {
+	compute();
+	prevDisplay.innerText = "";
+});
+
+delBtn.addEventListener("click", () => {
+	currDisplay.innerText = "";
+	currDisplay.innerText.slice(0, -1);
+});
