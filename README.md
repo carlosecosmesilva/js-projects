@@ -4,7 +4,7 @@ Desenvolvi o repositório para poder estudar de modo mais avançado versionament
 
 ### Links
 
--   Acesse o site aqui: [Link](https://carlosecosmesilva.github.io/js-projects/)
+-   Acesse o site aqui: [Link](https://starlit-horse-18d4ba.netlify.app)
 
 ## Processo de construção
 
