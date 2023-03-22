@@ -12,11 +12,11 @@ const list = document.getElementById("list");
 projects.forEach((project) => {
 	const listItem = document.createElement("li");
 	const link = document.createElement("a");
-	link.href = `/${project}/index.html`;
+	link.href = `./${project}/index.html`;
 	link.innerText = `${formatProjectName(project)}`;
 
 	const img = document.createElement("img");
-	img.src = `/${project}/design/desktop-design.jpg`;
+	img.src = `./${project}/design/desktop-design.jpg`;
 
 	link.prepend(img);
 	listItem.appendChild(link);
